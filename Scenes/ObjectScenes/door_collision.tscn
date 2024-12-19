@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://l0w8tc4dbv7g"]
+
+[ext_resource type="Script" path="res://Scripts/DoorCollision.cs" id="1_ag87x"]
+[ext_resource type="Texture2D" uid="uid://c3jb668v2pede" path="res://Sprites/304TileSet40p.png" id="1_d87dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suwqh"]
+size = Vector2(120, 120)
+
+[node name="DoorCollision" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_ag87x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, 20)
+texture = ExtResource("1_d87dk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_suwqh")
+
+[connection signal="body_entered" from="." to="." method="_on_door_entered"]

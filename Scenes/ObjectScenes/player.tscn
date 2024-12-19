@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt5frucsskhjv"]
+
+[ext_resource type="Texture2D" uid="uid://5ue8h2gtiby3" path="res://Sprites/icon.svg" id="1_mrqjl"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_ncir3"]
+[ext_resource type="Texture2D" uid="uid://pekvg3iwcdbn" path="res://Sprites/Flag48p.png" id="3_krn7l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3m076"]
+radius = 28.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 14
+script = ExtResource("1_ncir3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mrqjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3m076")
+
+[node name="FlagHoldSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6, -42)
+texture = ExtResource("3_krn7l")

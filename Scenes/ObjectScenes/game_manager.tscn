@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cll54mpkmuufx"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_ddlb1"]
+[ext_resource type="PackedScene" uid="uid://0ruiiixjxbwj" path="res://Scenes/GameScenes/game_end_screen.tscn" id="2_jt43f"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_ddlb1")
+
+[node name="GameEndScreen" parent="." instance=ExtResource("2_jt43f")]
+unique_name_in_owner = true
+visible = false
