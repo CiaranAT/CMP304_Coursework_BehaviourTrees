@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://02scjwgpwxsm"]
+[gd_scene load_steps=6 format=3 uid="uid://02scjwgpwxsm"]
 
 [ext_resource type="Texture2D" uid="uid://crbu4y0wcdbo0" path="res://Sprites/godotRed.png" id="1_3xjtf"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_r61he"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="3_xn1rh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3m076"]
 radius = 28.0
@@ -29,3 +30,8 @@ shape = SubResource("CircleShape2D_eqlne")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
 debug_enabled = true
+
+[node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("3_xn1rh")
+blackboard = NodePath("@Node@19319")
+actor = NodePath("..")

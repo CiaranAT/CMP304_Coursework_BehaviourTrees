@@ -47,7 +47,7 @@ limit_top = -300
 limit_bottom = 1000
 
 [node name="Flag" parent="." instance=ExtResource("3_ew3cd")]
-position = Vector2(225, 100)
+position = Vector2(247, 108)
 
 [node name="ExitCollision" parent="." instance=ExtResource("6_g8xoa")]
 position = Vector2(-17, 99)
