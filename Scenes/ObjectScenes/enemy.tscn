@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crbu4y0wcdbo0" path="res://Sprites/godotRed.png" id="1_3xjtf"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_r61he"]
-[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="3_xn1rh"]
+[ext_resource type="PackedScene" uid="uid://mb1w011kygkl" path="res://Scenes/ObjectScenes/enemy_ai.tscn" id="3_3yog1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3m076"]
 radius = 28.0
@@ -31,7 +31,8 @@ shape = SubResource("CircleShape2D_eqlne")
 path_postprocessing = 1
 debug_enabled = true
 
-[node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
-script = ExtResource("3_xn1rh")
-blackboard = NodePath("@Node@19319")
-actor = NodePath("..")
+[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
+blackboard = NodePath("@Node@80770")
+actor = NodePath("../NavigationAgent2D")
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://mb1w011kygkl"]
+
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_sx14a"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_a6etm"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/chase_player_action.gd" id="2_eb0hi"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/is_alert.gd" id="3_mnx7f"]
+
+[node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_sx14a")
+blackboard = NodePath("@Node@29730")
+actor = NodePath("")
+
+[node name="SequenceComposite" type="Node" parent="."]
+script = ExtResource("2_a6etm")
+
+[node name="IsAlert" type="Node" parent="SequenceComposite"]
+script = ExtResource("3_mnx7f")
+
+[node name="ChasePlayerAction" type="Node" parent="SequenceComposite"]
+script = ExtResource("2_eb0hi")
