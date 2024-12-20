@@ -7,7 +7,7 @@
 
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
-blackboard = NodePath("@Node@29730")
+blackboard = NodePath("@Node@17360")
 actor = NodePath("")
 
 [node name="SequenceComposite" type="Node" parent="."]

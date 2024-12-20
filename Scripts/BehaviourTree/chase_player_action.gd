@@ -6,10 +6,19 @@ extends ActionLeaf
 
 var target_reached = false
 
+func _target_reached():
+	self.target_reached = true
+	print("target reached signal")
+
+var callable = Callable(self, "_target_reached")
+
 func tick(actor, _blackboard):
-	#actor.is_connected("target_reached")
+	if !actor.is_connected("target_reached", _target_reached):
+		actor.connect("target_reached", _target_reached)
 
 	if target_reached:
+		target_reached = false
+		actor.disconnect("target_reached", _target_reached)
 		return SUCCESS
 	
 	if !target_reached:
@@ -25,7 +34,3 @@ func tick(actor, _blackboard):
 		#return SUCCESS
 	#actor.set_target_location(actor.target.global_postion)
 	#return RUNNING
-
-func _target_reached():
-	self.target_reached = true
-	print("target reached signal")
