@@ -10,19 +10,10 @@
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
 blackboard = NodePath("@Node@17360")
-actor = NodePath("")
+actor = NodePath("..")
 
 [node name="SelectorComposite" type="Node" parent="."]
 script = ExtResource("2_ppwt1")
-
-[node name="PatrolSequence" type="Node" parent="SelectorComposite"]
-script = ExtResource("2_a6etm")
-
-[node name="IsAlert" type="Node" parent="SelectorComposite/PatrolSequence"]
-script = ExtResource("3_mnx7f")
-
-[node name="WalkToDoorsSequence" type="Node" parent="SelectorComposite/PatrolSequence"]
-script = ExtResource("5_0ayoh")
 
 [node name="ChasePlayerSequence" type="Node" parent="SelectorComposite"]
 script = ExtResource("2_a6etm")
@@ -32,3 +23,12 @@ script = ExtResource("3_mnx7f")
 
 [node name="ChasePlayerAction" type="Node" parent="SelectorComposite/ChasePlayerSequence"]
 script = ExtResource("2_eb0hi")
+
+[node name="PatrolSequence" type="Node" parent="SelectorComposite"]
+script = ExtResource("2_a6etm")
+
+[node name="IsAlert" type="Node" parent="SelectorComposite/PatrolSequence"]
+script = ExtResource("3_mnx7f")
+
+[node name="WalkToDoorsSequence" type="Node" parent="SelectorComposite/PatrolSequence"]
+script = ExtResource("5_0ayoh")

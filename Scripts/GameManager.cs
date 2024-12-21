@@ -5,6 +5,15 @@ public partial class GameManager : Node
 {
 	public bool gamevictory = false;
 
+    //public partial class MyNode2D : Node2D
+    //{
+    //    [Signal]
+    //    public delegate void DoorEntered();
+    //}
+
+    [Signal]
+    public delegate void DoorEnteredEventHandler();
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
@@ -15,12 +24,14 @@ public partial class GameManager : Node
 	{
 	}
 
-	public void doorOpenAlert()
-	{
+    public void doorOpenAlert()
+    {
+
         GD.Print("door collision alert");
+        EmitSignal(SignalName.DoorEntered);
     }
 
-	public void exitCollision()
+    public void exitCollision()
 	{
         if (GetNode<Player>("%Player").hasFlag)
 		{

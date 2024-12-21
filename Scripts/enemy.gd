@@ -4,6 +4,12 @@ class_name Enemy
 
 signal target_reached
 
+enum States {
+	PASSIVE = 0,
+	ALERT = 1,
+	CHASING = 2
+}
+
 var movement_speed = 210.0
 @export var target: Node2D = null
 @export var player: Node2D = null
