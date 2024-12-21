@@ -1,9 +1,5 @@
 extends ActionLeaf
 
-
-#func tick(actor: Node, blackboard: Blackboard) -> int:
-	#return SUCCESS
-
 var target_reached = false
 
 func _target_reached():
@@ -28,6 +24,7 @@ func tick(actor, _blackboard):
 		#print("This is an Enemy:", actor.name)
 	
 	actor.target_location = actor.target.global_position
+	#actor.test_print()
 	
 	#print(type_string(typeof(actor)))
 	

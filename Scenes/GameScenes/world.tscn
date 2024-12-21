@@ -16,25 +16,25 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAIAAAAAAAIAAAACAAMAAAAAAAEAAAACAAM
 [node name="GameManager" parent="." instance=ExtResource("1_rf3hq")]
 unique_name_in_owner = true
 
-[node name="DoorCollision" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(459, 100)
 
-[node name="DoorCollision2" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision2" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(459, 540)
 
-[node name="DoorCollision3" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision3" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(579, 660)
 
-[node name="DoorCollision4" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision4" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(1139, 541)
 
-[node name="DoorCollision5" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision5" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(1499, 779)
 
-[node name="DoorCollision6" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision6" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(1499, 100)
 
-[node name="DoorCollision7" parent="GameManager" instance=ExtResource("4_4fyhm")]
+[node name="DoorCollision7" parent="GameManager" groups=["door_group"] instance=ExtResource("4_4fyhm")]
 position = Vector2(2097, 501)
 
 [node name="Player" parent="." instance=ExtResource("2_ohdp2")]
@@ -53,6 +53,6 @@ position = Vector2(247, 108)
 position = Vector2(-17, 99)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("target", "player") instance=ExtResource("7_hhvdi")]
-position = Vector2(1021, 484)
+position = Vector2(109, 161)
 target = NodePath("../Player")
 player = NodePath("../Player")

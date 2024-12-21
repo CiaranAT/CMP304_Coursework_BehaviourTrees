@@ -3,8 +3,10 @@ using System;
 
 public partial class DoorCollision : Area2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+    public bool door_unchecked = true;
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
 	}
 
