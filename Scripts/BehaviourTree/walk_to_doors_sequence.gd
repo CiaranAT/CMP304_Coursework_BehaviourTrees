@@ -25,8 +25,16 @@ func _select_door(actor: Node):
 			door.door_unchecked = false;
 			door_selected = true;
 			return
-			
-		
+	
+	if all_doors_checked:
+		_reset_doors(actor)
+	
+	_select_door(actor)
+
+func _reset_doors(actor: Node):
+	for door in get_tree().get_nodes_in_group("door_group"):
+		door.door_unchecked = true
+	
 
 func tick(actor, _blackboard):
 	
