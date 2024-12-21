@@ -1,10 +1,12 @@
-class_name Enemy
 extends CharacterBody2D
+
+class_name Enemy
 
 signal target_reached
 
 var movement_speed = 210.0
 @export var target: Node2D = null
+@export var player: Node2D = null
 @export var target_location: Vector2:
 	get = get_target_location, set = set_target_location
 
@@ -28,12 +30,18 @@ func set_target_location(value):
 	if navigation_agent != null:
 		navigation_agent.target_position = target_location
 
+func test_print():
+	print("enemy function test print")
+	return
+
 func _physics_process(delta: float):
 	if navigation_agent.is_navigation_finished():
 		return
 	
 	#if target:
 		#navigation_agent.target_position = target.global_position
+	
+
 	
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent.get_next_path_position()
