@@ -15,8 +15,9 @@ enum State {
 @export var target_location: Vector2:
 	get = get_target_location, set = set_target_location
 	
-@onready var navigation_agent = $NavigationAgent2D
+@onready var navigation_agent = $EnemyNavigation
 @onready var enemy_state_sprite = $EnemyStateSprite
+@onready var line_of_sight = $LineOfSight
 @onready var game_manager = get_node("/root/World/GameManager")
 
 var door_entered_callable = Callable(self, "_door_entered")
@@ -24,8 +25,9 @@ var current_state = State.ROAMING
 var current_movement_speed = 175
 var base_speed = 200
 var roam_speed = 175
-var chase_speed = 250
+var chase_speed = 225
 var door_alert_during_search = false
+var player_spotted
 
 func _ready():
 	
@@ -74,10 +76,33 @@ func set_state(new_state):
 			current_movement_speed = chase_speed
 			enemy_state_sprite.set_frame(2)
 
+func check_lineofsight():
+	line_of_sight.look_at(target.global_position)
+	
+	#if line_of_sight.is_colliding():
+		#var collider = line_of_sight.get_collider()
+		#print("Collider detected: ", collider)
+	#else:
+		#print("No collision detected.")
+	if player:
+		is_player_in_sight()
+		if player_spotted:
+			set_state(State.CHASING)
+
+func is_player_in_sight():
+	var collider = line_of_sight.get_collider()
+	if collider and collider.name == "Player":
+		print("This Node2D is the player!")
+		player_spotted = true
+		print("raycast collided")
+		return
+	player_spotted = false
 
 func _physics_process(delta: float):
 	if navigation_agent.is_navigation_finished():
 		return
+
+	check_lineofsight()
 
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent.get_next_path_position()

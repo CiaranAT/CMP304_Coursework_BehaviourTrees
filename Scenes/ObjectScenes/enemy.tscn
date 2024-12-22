@@ -34,12 +34,17 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_eqlne")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="EnemyNavigation" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
 debug_enabled = true
 
-[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
-actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@69146")
+[node name="LineOfSight" type="RayCast2D" parent="."]
+target_position = Vector2(800, 0)
+collision_mask = 9
 
-[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
+actor_node_path = NodePath("..")
+blackboard = NodePath("@Node@88592")
+actor = NodePath("..")
+
+[connection signal="target_reached" from="EnemyNavigation" to="." method="_on_navigation_agent_2d_target_reached"]

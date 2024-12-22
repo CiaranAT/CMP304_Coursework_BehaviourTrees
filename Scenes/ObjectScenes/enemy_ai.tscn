@@ -1,35 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://mb1w011kygkl"]
+[gd_scene load_steps=10 format=3 uid="uid://mb1w011kygkl"]
 
 [ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_sx14a"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_a6etm"]
-[ext_resource type="Script" path="res://Scripts/BehaviourTree/search_door_alert_action.gd" id="2_eb0hi"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/chase_player_action.gd" id="2_eb0hi"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="2_ppwt1"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_searching.gd" id="3_mnx7f"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/is_chasing_condition.gd" id="4_sehyo"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/roaming_sequence.gd" id="5_0ayoh"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_roaming_condition.gd" id="6_a6n3t"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/search_alert_action.gd" id="7_7lfsk"]
 
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
-blackboard = NodePath("@Node@37435")
+blackboard = NodePath("@Node@75237")
 actor = NodePath("")
 
-[node name="SelectorComposite" type="Node" parent="."]
+[node name="StateSelector" type="Node" parent="."]
 script = ExtResource("2_ppwt1")
 
-[node name="ChasePlayerSequence" type="Node" parent="SelectorComposite"]
+[node name="ChasePlayerSequence" type="Node" parent="StateSelector"]
 script = ExtResource("2_a6etm")
 
-[node name="IsSearchingCondition" type="Node" parent="SelectorComposite/ChasePlayerSequence"]
-script = ExtResource("3_mnx7f")
+[node name="IsChasingCondition" type="Node" parent="StateSelector/ChasePlayerSequence"]
+script = ExtResource("4_sehyo")
 
-[node name="SearchDoorAlertAction" type="Node" parent="SelectorComposite/ChasePlayerSequence"]
+[node name="ChasePlayerAction" type="Node" parent="StateSelector/ChasePlayerSequence"]
 script = ExtResource("2_eb0hi")
 
-[node name="PatrolSequence" type="Node" parent="SelectorComposite"]
+[node name="PatrolSelector" type="Node" parent="StateSelector"]
+script = ExtResource("2_ppwt1")
+
+[node name="SearchAlertSequence" type="Node" parent="StateSelector/PatrolSelector"]
 script = ExtResource("2_a6etm")
 
-[node name="IsRoamingCondition" type="Node" parent="SelectorComposite/PatrolSequence"]
+[node name="IsSearchingCondition" type="Node" parent="StateSelector/PatrolSelector/SearchAlertSequence"]
+script = ExtResource("3_mnx7f")
+
+[node name="SearchAlertAction" type="Node" parent="StateSelector/PatrolSelector/SearchAlertSequence"]
+script = ExtResource("7_7lfsk")
+
+[node name="RoamingSequence" type="Node" parent="StateSelector/PatrolSelector"]
+script = ExtResource("2_a6etm")
+
+[node name="IsRoamingCondition" type="Node" parent="StateSelector/PatrolSelector/RoamingSequence"]
 script = ExtResource("6_a6n3t")
 
-[node name="RoamingSequence" type="Node" parent="SelectorComposite/PatrolSequence"]
+[node name="RoamingSequence" type="Node" parent="StateSelector/PatrolSelector/RoamingSequence"]
 script = ExtResource("5_0ayoh")
