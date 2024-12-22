@@ -51,7 +51,7 @@ func _door_entered():
 	print("Signal received in Enemy: door_entered")
 	if current_state == State.SEARCHING:
 		door_alert_during_search = true
-	else:
+	elif !current_state == State.SEARCHING:
 		set_state(State.SEARCHING)
 
 func get_target_location():

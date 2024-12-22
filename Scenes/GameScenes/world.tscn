@@ -47,13 +47,13 @@ limit_top = -300
 limit_bottom = 1000
 
 [node name="Flag" parent="." instance=ExtResource("3_ew3cd")]
-position = Vector2(247, 108)
+position = Vector2(2167, 500)
 
 [node name="ExitCollision" parent="." instance=ExtResource("6_g8xoa")]
 position = Vector2(-17, 99)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("target", "player") instance=ExtResource("7_hhvdi")]
 unique_name_in_owner = true
-position = Vector2(650, 273)
+position = Vector2(1503, 500)
 target = NodePath("../Player")
 player = NodePath("../Player")

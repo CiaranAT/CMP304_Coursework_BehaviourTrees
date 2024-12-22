@@ -42,9 +42,8 @@ debug_enabled = true
 target_position = Vector2(800, 0)
 collision_mask = 9
 
-[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
+[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@88592")
-actor = NodePath("..")
+blackboard = NodePath("@Node@101690")
 
 [connection signal="target_reached" from="EnemyNavigation" to="." method="_on_navigation_agent_2d_target_reached"]
