@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cocpy4otkqcix"]
+[gd_scene load_steps=9 format=4 uid="uid://cocpy4otkqcix"]
 
 [ext_resource type="PackedScene" uid="uid://cd63w44qtt4x2" path="res://Scenes/ObjectScenes/tile_map_layer.tscn" id="1_b6ho4"]
 [ext_resource type="PackedScene" uid="uid://cll54mpkmuufx" path="res://Scenes/ObjectScenes/game_manager.tscn" id="1_rf3hq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://l0w8tc4dbv7g" path="res://Scenes/ObjectScenes/door_collision.tscn" id="4_4fyhm"]
 [ext_resource type="PackedScene" uid="uid://cr8c0nx6wwu7d" path="res://Scenes/ObjectScenes/exit_collision.tscn" id="6_g8xoa"]
 [ext_resource type="PackedScene" uid="uid://02scjwgpwxsm" path="res://Scenes/ObjectScenes/enemy.tscn" id="7_hhvdi"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="8_n1jjg"]
 
 [node name="World" type="Node2D"]
 
@@ -57,3 +58,6 @@ unique_name_in_owner = true
 position = Vector2(109, 161)
 target = NodePath("../Player")
 player = NodePath("../Player")
+
+[node name="GDGameManager" type="Node" parent="."]
+script = ExtResource("8_n1jjg")

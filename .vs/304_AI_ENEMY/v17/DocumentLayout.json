@@ -44,19 +44,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ConditionLeaf.cs",
-              "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
-              "RelativeDocumentMoniker": "..\\..\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
-              "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
-              "RelativeToolTip": "..\\..\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T16:25:40.223Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -72,6 +61,30 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Scripts\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:03:00.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConditionLeaf.cs",
+              "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
+              "RelativeDocumentMoniker": "..\\..\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
+              "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
+              "RelativeToolTip": "..\\..\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T16:25:40.223Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "ExitCollision.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\ExitCollision.cs",
@@ -84,26 +97,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwA4AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T16:03:00.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "DoorCollision.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\DoorCollision.cs",
               "RelativeDocumentMoniker": "Scripts\\DoorCollision.cs",
               "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\DoorCollision.cs",
               "RelativeToolTip": "Scripts\\DoorCollision.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T15:34:21.067Z",
               "EditorCaption": ""
