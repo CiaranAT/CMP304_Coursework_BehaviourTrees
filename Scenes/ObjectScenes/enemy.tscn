@@ -33,7 +33,7 @@ debug_enabled = true
 
 [node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@17358")
+blackboard = NodePath("@Node@25307")
 actor = NodePath("..")
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

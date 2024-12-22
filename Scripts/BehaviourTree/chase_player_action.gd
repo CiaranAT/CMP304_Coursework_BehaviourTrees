@@ -21,8 +21,8 @@ func tick(actor, _blackboard):
 		actor.connect("target_reached", _target_reached)
 		
 
-	if !actor.is_connected("door_entered", _door_entered):
-		actor.connect("door_entered", _door_entered)
+	#if !actor.is_connected("door_entered", _door_entered):
+		#actor.connect("door_entered", _door_entered)
 
 	if target_reached:
 		target_reached = false

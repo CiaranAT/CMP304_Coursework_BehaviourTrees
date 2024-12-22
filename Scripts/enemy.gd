@@ -17,10 +17,32 @@ var movement_speed = 210.0
 	get = get_target_location, set = set_target_location
 
 @onready var navigation_agent = $NavigationAgent2D
+@onready var game_manager = get_node("/root/World/GameManager")
+
+var door_entered_callable = Callable(self, "_door_entered")
 
 func _ready():
+	
+	if game_manager:
+		print("GameManager found")
+	else:
+		print("GameManager not found")
+	
+	print(game_manager.get_signal_list())
 	call_deferred("path_finding_setup")
-	pass #replace
+	
+	call_deferred("connect_signal")
+	
+
+func connect_signal():
+	if game_manager.has_signal("DoorEntered"):
+		game_manager.connect("DoorEntered", _door_entered)
+		print("Signal 'door_entered' found!!!!!.")
+	else:
+		print("Signal 'door_entered' not found on GameManager.")
+
+func _door_entered():
+	print("Signal received in Enemy: door_entered")
 
 func path_finding_setup():
 	await get_tree().physics_frame
