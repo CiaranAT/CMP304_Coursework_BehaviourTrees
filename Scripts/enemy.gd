@@ -12,6 +12,7 @@ enum State {
 
 var current_state = State.ROAMING
 var movement_speed = 210.0
+var door_alert_during_search = false
 @export var target: Node2D = null
 @export var player: Node2D = null
 @export var target_location: Vector2:
@@ -36,6 +37,7 @@ func _ready():
 	
 
 func connect_signal():
+	print("connect signal call in enemy")
 	if game_manager.has_signal("DoorEntered"):
 		game_manager.connect("DoorEntered", _door_entered)
 		print("Signal 'door_entered' found!!!!!.")
@@ -43,8 +45,11 @@ func connect_signal():
 		print("Signal 'door_entered' not found on GameManager.")
 
 func _door_entered():
-	current_state = State.SEARCHING
 	print("Signal received in Enemy: door_entered")
+	if current_state == State.SEARCHING:
+		door_alert_during_search = true
+	else:
+		current_state = State.SEARCHING
 
 func path_finding_setup():
 	await get_tree().physics_frame
