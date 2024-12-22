@@ -21,7 +21,10 @@ enum State {
 
 var door_entered_callable = Callable(self, "_door_entered")
 var current_state = State.ROAMING
-var movement_speed = 210.0
+var current_movement_speed = 175
+var base_speed = 200
+var roam_speed = 175
+var chase_speed = 250
 var door_alert_during_search = false
 
 func _ready():
@@ -47,7 +50,7 @@ func _door_entered():
 	if current_state == State.SEARCHING:
 		door_alert_during_search = true
 	else:
-		current_state = State.SEARCHING
+		set_state(State.SEARCHING)
 
 func get_target_location():
 	return target_location
@@ -60,22 +63,25 @@ func set_target_location(value):
 func set_state(new_state):
 	current_state = new_state
 	
+	match current_state:
+		State.ROAMING:
+			enemy_state_sprite.set_frame(0)
+			current_movement_speed = roam_speed
+		State.SEARCHING:
+			current_movement_speed = base_speed
+			enemy_state_sprite.set_frame(1)
+		State.CHASING:
+			current_movement_speed = chase_speed
+			enemy_state_sprite.set_frame(2)
+
 
 func _physics_process(delta: float):
 	if navigation_agent.is_navigation_finished():
 		return
 
-	match current_state:
-		State.ROAMING:
-			enemy_state_sprite.set_frame(0)
-		State.SEARCHING:
-			enemy_state_sprite.set_frame(1)
-		State.CHASING:
-			enemy_state_sprite.set_frame(2)
-
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent.get_next_path_position()
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	velocity = current_agent_position.direction_to(next_path_position) * current_movement_speed
 	
 	move_and_slide()
 

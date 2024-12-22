@@ -22,7 +22,7 @@ func tick(actor, _blackboard):
 	
 	if target_reached:
 		target_reached = false
-		actor.current_state = State.ROAMING
+		actor.set_state(State.ROAMING)
 		actor.disconnect("target_reached", _target_reached)
 		return SUCCESS
 	

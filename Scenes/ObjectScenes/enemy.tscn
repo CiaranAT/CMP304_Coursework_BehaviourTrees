@@ -38,9 +38,8 @@ shape = SubResource("CircleShape2D_eqlne")
 path_postprocessing = 1
 debug_enabled = true
 
-[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
+[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@68484")
-actor = NodePath("..")
+blackboard = NodePath("@Node@69146")
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
