@@ -5,12 +5,6 @@ public partial class GameManager : Node
 {
 	public bool gamevictory = false;
 
-    //public partial class MyNode2D : Node2D
-    //{
-    //    [Signal]
-    //    public delegate void DoorEntered();
-    //}
-
     [Signal]
     public delegate void DoorEnteredEventHandler();
 

@@ -11,6 +11,7 @@ radius = 28.0
 radius = 381.021
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_r61he")
 
@@ -33,7 +34,7 @@ debug_enabled = true
 
 [node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@25307")
+blackboard = NodePath("@Node@35617")
 actor = NodePath("..")
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

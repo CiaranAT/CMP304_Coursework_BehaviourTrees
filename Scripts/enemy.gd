@@ -4,12 +4,13 @@ class_name Enemy
 
 signal target_reached
 
-enum States {
-	PASSIVE = 0,
-	ALERT = 1,
+enum State {
+	ROAMING = 0,
+	SEARCHING = 1,
 	CHASING = 2
 }
 
+var current_state = State.ROAMING
 var movement_speed = 210.0
 @export var target: Node2D = null
 @export var player: Node2D = null
@@ -28,7 +29,7 @@ func _ready():
 	else:
 		print("GameManager not found")
 	
-	print(game_manager.get_signal_list())
+	#print(game_manager.get_signal_list())
 	call_deferred("path_finding_setup")
 	
 	call_deferred("connect_signal")
@@ -42,6 +43,7 @@ func connect_signal():
 		print("Signal 'door_entered' not found on GameManager.")
 
 func _door_entered():
+	current_state = State.SEARCHING
 	print("Signal received in Enemy: door_entered")
 
 func path_finding_setup():

@@ -1,5 +1,11 @@
 extends ActionLeaf
 
+enum State {
+	ROAMING = 0,
+	SEARCHING = 1,
+	CHASING = 2
+}
+
 var door_selected = false
 
 var target_reached = false
@@ -55,6 +61,9 @@ func tick(actor, _blackboard):
 		# no close tree available right now!
 		#if closest_tree == null:
 			#return FAILURE
+	
+	if !actor.current_state == State.ROAMING:
+		return FAILURE
 	
 	if !target_reached:
 		return RUNNING

@@ -1,5 +1,11 @@
 extends ActionLeaf
 
+enum State {
+	ROAMING = 0,
+	SEARCHING = 1,
+	CHASING = 2
+}
+
 var target_reached = false
 
 func _target_reached():
@@ -19,6 +25,7 @@ var door_entered_callable = Callable(self, "_door_entered")
 func tick(actor, _blackboard):
 	if !actor.is_connected("target_reached", _target_reached):
 		actor.connect("target_reached", _target_reached)
+		actor.target_location = actor.target.global_position
 		
 
 	#if !actor.is_connected("door_entered", _door_entered):
@@ -26,6 +33,7 @@ func tick(actor, _blackboard):
 
 	if target_reached:
 		target_reached = false
+		actor.current_state = State.ROAMING
 		print(actor.name)
 		actor.disconnect("target_reached", _target_reached)
 		return SUCCESS
@@ -33,11 +41,13 @@ func tick(actor, _blackboard):
 	#if actor is Enemy:
 		#print("This is an Enemy:", actor.name)
 	if door_triggered:
-		actor.target_location = actor.target.global_position
 		door_triggered = false
 	#actor.test_print()
 	
 	#print(type_string(typeof(actor)))
+	
+	if !actor.current_state == State.ROAMING:
+		return FAILURE
 	
 	if !target_reached:
 		return RUNNING
