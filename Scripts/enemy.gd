@@ -72,9 +72,14 @@ func set_state(new_state):
 		State.SEARCHING:
 			current_movement_speed = base_speed
 			enemy_state_sprite.set_frame(1)
+			_reset_doors()
 		State.CHASING:
 			current_movement_speed = chase_speed
 			enemy_state_sprite.set_frame(2)
+
+func _reset_doors():
+	for door in get_tree().get_nodes_in_group("door_group"):
+		door.door_unchecked = true
 
 func check_lineofsight():
 	line_of_sight.look_at(target.global_position)

@@ -9,7 +9,7 @@
 radius = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eqlne"]
-radius = 381.021
+radius = 500.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -29,7 +29,6 @@ hframes = 3
 shape = SubResource("CircleShape2D_3m076")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_eqlne")
@@ -39,11 +38,12 @@ path_postprocessing = 1
 debug_enabled = true
 
 [node name="LineOfSight" type="RayCast2D" parent="."]
-target_position = Vector2(800, 0)
+exclude_parent = false
+target_position = Vector2(500, 0)
 collision_mask = 9
 
 [node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@101690")
+blackboard = NodePath("@Node@119095")
 
 [connection signal="target_reached" from="EnemyNavigation" to="." method="_on_navigation_agent_2d_target_reached"]

@@ -17,24 +17,29 @@ var callable = Callable(self, "_target_reached")
 
 func _select_door(actor: Node):
 	
+	var selected_door
+	var door_distance
+	var shortest_distance = 9999999
+	
 	for door in get_tree().get_nodes_in_group("door_group"):
 		if door.door_unchecked:
-			print("door selected")
-			actor.target_location = door.global_position
-			door.door_unchecked = false;
-			door_selected = true;
-			return
-
-func _reset_doors(actor: Node):
-	for door in get_tree().get_nodes_in_group("door_group"):
-		door.door_unchecked = true
+			
+			door_distance = actor.global_position.distance_to(door.global_position)
+			if door_distance < shortest_distance:
+				actor.target_location = door.global_position
+				shortest_distance = door_distance
+				selected_door = door
+				door_selected = true;
+	
+	if selected_door:
+		print("door selected in Roaming Action")
+		selected_door.door_unchecked = false;
 	
 
 func tick(actor, _blackboard):
 	
 	if !actor.is_connected("target_reached", _target_reached):
 		actor.connect("target_reached", _target_reached)
-		
 
 	if target_reached:
 		target_reached = false
@@ -46,7 +51,7 @@ func tick(actor, _blackboard):
 		_select_door(actor)
 		
 		if !door_selected:
-			_reset_doors(actor)
+			actor._reset_doors()
 			return FAILURE
 	
 	if !actor.current_state == State.ROAMING:

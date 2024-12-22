@@ -6,14 +6,14 @@
 [ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector.gd" id="2_ppwt1"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_searching.gd" id="3_mnx7f"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_chasing_condition.gd" id="4_sehyo"]
-[ext_resource type="Script" path="res://Scripts/BehaviourTree/roaming_sequence.gd" id="5_0ayoh"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/roaming_action.gd" id="5_0ayoh"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_roaming_condition.gd" id="6_a6n3t"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/search_alert_action.gd" id="7_7lfsk"]
 
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
-blackboard = NodePath("@Node@75237")
-actor = NodePath("..")
+blackboard = NodePath("@Node@116284")
+actor = NodePath("")
 
 [node name="StateSelector" type="Node" parent="."]
 script = ExtResource("2_ppwt1")
@@ -45,5 +45,5 @@ script = ExtResource("2_a6etm")
 [node name="IsRoamingCondition" type="Node" parent="StateSelector/PatrolSelector/RoamingSequence"]
 script = ExtResource("6_a6n3t")
 
-[node name="RoamingSequence" type="Node" parent="StateSelector/PatrolSelector/RoamingSequence"]
+[node name="RoamingAction" type="Node" parent="StateSelector/PatrolSelector/RoamingSequence"]
 script = ExtResource("5_0ayoh")
