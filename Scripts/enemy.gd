@@ -10,18 +10,19 @@ enum State {
 	CHASING = 2
 }
 
-var current_state = State.ROAMING
-var movement_speed = 210.0
-var door_alert_during_search = false
 @export var target: Node2D = null
 @export var player: Node2D = null
 @export var target_location: Vector2:
 	get = get_target_location, set = set_target_location
-
+	
 @onready var navigation_agent = $NavigationAgent2D
+@onready var enemy_state_sprite = $EnemyStateSprite
 @onready var game_manager = get_node("/root/World/GameManager")
 
 var door_entered_callable = Callable(self, "_door_entered")
+var current_state = State.ROAMING
+var movement_speed = 210.0
+var door_alert_during_search = false
 
 func _ready():
 	
@@ -30,9 +31,6 @@ func _ready():
 	else:
 		print("GameManager not found")
 	
-	#print(game_manager.get_signal_list())
-	call_deferred("path_finding_setup")
-	
 	call_deferred("connect_signal")
 	
 
@@ -40,7 +38,7 @@ func connect_signal():
 	print("connect signal call in enemy")
 	if game_manager.has_signal("DoorEntered"):
 		game_manager.connect("DoorEntered", _door_entered)
-		print("Signal 'door_entered' found!!!!!.")
+		print("Signal 'door_entered' found on GameManager.")
 	else:
 		print("Signal 'door_entered' not found on GameManager.")
 
@@ -51,12 +49,6 @@ func _door_entered():
 	else:
 		current_state = State.SEARCHING
 
-func path_finding_setup():
-	await get_tree().physics_frame
-	if target:
-		#navigation_agent.target_position = target.global_position
-		set_target_location(target.global_position)
-
 func get_target_location():
 	return target_location
 
@@ -65,27 +57,28 @@ func set_target_location(value):
 	if navigation_agent != null:
 		navigation_agent.target_position = target_location
 
-func test_print():
-	print("enemy function test print")
-	return
+func set_state(new_state):
+	current_state = new_state
+	
 
 func _physics_process(delta: float):
 	if navigation_agent.is_navigation_finished():
 		return
-	
-	#if target:
-		#navigation_agent.target_position = target.global_position
-	
 
-	
+	match current_state:
+		State.ROAMING:
+			enemy_state_sprite.set_frame(0)
+		State.SEARCHING:
+			enemy_state_sprite.set_frame(1)
+		State.CHASING:
+			enemy_state_sprite.set_frame(2)
+
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent.get_next_path_position()
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	
 	move_and_slide()
-	pass
-
 
 func _on_navigation_agent_2d_target_reached():
 	emit_signal("target_reached")
-	print("target reached")
+	print("Signal received in Enemy: target reached")

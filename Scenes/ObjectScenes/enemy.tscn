@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://02scjwgpwxsm"]
+[gd_scene load_steps=7 format=3 uid="uid://02scjwgpwxsm"]
 
 [ext_resource type="Texture2D" uid="uid://crbu4y0wcdbo0" path="res://Sprites/godotRed.png" id="1_3xjtf"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_r61he"]
 [ext_resource type="PackedScene" uid="uid://mb1w011kygkl" path="res://Scenes/ObjectScenes/enemy_ai.tscn" id="3_3yog1"]
+[ext_resource type="Texture2D" uid="uid://bjgliaytrtdbp" path="res://Sprites/EnemyStates48p.png" id="3_j01yh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3m076"]
 radius = 28.0
@@ -15,9 +16,14 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_r61he")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="EnemySprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3xjtf")
+
+[node name="EnemyStateSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -44)
+texture = ExtResource("3_j01yh")
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3m076")
@@ -32,8 +38,9 @@ shape = SubResource("CircleShape2D_eqlne")
 path_postprocessing = 1
 debug_enabled = true
 
-[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
+[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@39341")
+blackboard = NodePath("@Node@68484")
+actor = NodePath("..")
 
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
