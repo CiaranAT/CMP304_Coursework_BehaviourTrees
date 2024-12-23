@@ -26,10 +26,10 @@ var roam_speed = 175
 var chase_speed = 225
 var door_alert_during_search = false
 var player_spotted
-@export var elapsed_time = 0
-@export var time_roaming = 0
-@export var time_searching = 0
-@export var time_chasing = 0
+var elapsed_time = 0
+var time_roaming = 0
+var time_searching = 0
+var time_chasing = 0
 
 func _ready():
 	
@@ -93,9 +93,7 @@ func check_lineofsight():
 func is_player_in_sight():
 	var collider = line_of_sight.get_collider()
 	if collider and collider.name == "Player":
-		print("This Node2D is the player!")
 		player_spotted = true
-		print("raycast collided")
 		return
 	player_spotted = false
 
@@ -127,4 +125,5 @@ func _on_navigation_agent_2d_target_reached():
 
 func _on_collision_detection_area_body_entered(body: Node2D):
 	if body.name == "Player":
+		game_manager.getTimes(elapsed_time)
 		game_manager.endScreen()

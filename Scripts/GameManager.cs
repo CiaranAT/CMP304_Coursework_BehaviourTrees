@@ -46,10 +46,15 @@ public partial class GameManager : Node
 
     }
 
+    public void getTimes(float new_elapsed)
+    {
+        elapsed_time = new_elapsed;
+
+        GD.Print("Elapsed time updated: " + elapsed_time);
+    }
+
 	public void endScreen()
 	{
-// elapsed_time = GetNode<GameEndScreen>("%Enemy").elapsed_time
-
 
         GetTree().Paused = true;
 
