@@ -12,4 +12,5 @@ func tick(actor, _blackboard):
 		actor.target_location = actor.player.global_position
 		return RUNNING
 	else:
+		actor.set_state(State.SEARCHING)
 		return SUCCESS

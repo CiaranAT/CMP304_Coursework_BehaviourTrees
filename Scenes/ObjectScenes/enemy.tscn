@@ -41,7 +41,7 @@ collision_mask = 9
 
 [node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@295442")
+blackboard = NodePath("@Node@283165")
 
 [connection signal="body_entered" from="CollisionDetectionArea" to="." method="_on_collision_detection_area_body_entered"]
 [connection signal="target_reached" from="EnemyNavigation" to="." method="_on_navigation_agent_2d_target_reached"]
