@@ -21,11 +21,14 @@ func tick(actor, _blackboard):
 	
 	if target_reached:
 		target_reached = false
-		actor.set_state(State.ROAMING)
+		if actor.current_state == State.CHASING:
+			actor.set_state(State.SEARCHING)
+		else:
+			actor.set_state(State.ROAMING)
 		actor.disconnect("target_reached", _target_reached)
 		return SUCCESS
 	
-	if actor.door_alert_during_search or actor.current_state == State.CHASING:
+	if actor.door_alert_during_search or actor.player_spotted:
 		actor.target_location = actor.player.global_position
 		actor.door_alert_during_search = false
 		return FAILURE

@@ -14,7 +14,7 @@
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
 blackboard = NodePath("@Node@17360")
-actor = NodePath("..")
+actor = NodePath("")
 
 [node name="StateSelector" type="Node" parent="."]
 script = ExtResource("2_ppwt1")
@@ -27,6 +27,9 @@ script = ExtResource("4_sehyo")
 
 [node name="ChasePlayerAction" type="Node" parent="StateSelector/ChasePlayerSequence"]
 script = ExtResource("2_eb0hi")
+
+[node name="SearchAlertAction" type="Node" parent="StateSelector/ChasePlayerSequence"]
+script = ExtResource("7_7lfsk")
 
 [node name="PatrolSelector" type="Node" parent="StateSelector"]
 script = ExtResource("2_ppwt1")
