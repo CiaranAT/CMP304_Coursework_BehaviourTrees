@@ -4,6 +4,8 @@ using System;
 public partial class MainMenu : CanvasLayer
 {
     PackedScene world1 = (PackedScene)GD.Load("res://Scenes/GameScenes/world.tscn");
+    PackedScene world2 = (PackedScene)GD.Load("res://Scenes/GameScenes/world2.tscn");
+    PackedScene world3 = (PackedScene)GD.Load("res://Scenes/GameScenes/world3.tscn");
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
@@ -18,4 +20,20 @@ public partial class MainMenu : CanvasLayer
 	{
         GetTree().ChangeSceneToPacked(world1);
     }
+
+    public void _on_play_2_button_down()
+    {
+        GD.Print("button 2");
+
+        GetTree().ChangeSceneToPacked(world2);
+    }
+
+    public void _on_play_3_button_down()
+    {
+        GD.Print("button 3");
+        GetTree().ChangeSceneToPacked(world3);
+    }
 }
+
+
+

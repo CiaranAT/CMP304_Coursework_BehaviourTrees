@@ -15,7 +15,7 @@ func tick(actor, _blackboard):
 		start_wait_time = actor.elapsed_time
 		
 
-	wait_time =  actor.elapsed_time - 1.0
+	wait_time =  actor.elapsed_time - 0.75
 
 	if start_wait_time < wait_time:
 		

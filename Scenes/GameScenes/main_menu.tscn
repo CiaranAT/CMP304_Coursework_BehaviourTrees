@@ -31,9 +31,26 @@ alignment = 1
 
 [node name="play1Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Play map 1"
+text = "Play Map 1 - Default"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="play2Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play Map 2 - More Doors"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="play3Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play Map 3 - Open Plan"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 10)
 layout_mode = 2
 
 [node name="exitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -43,10 +60,10 @@ text = "exit"
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 36.0
 offset_top = 29.0
-offset_right = 447.0
+offset_right = 369.0
 offset_bottom = 524.0
 bbcode_enabled = true
-text = "[b]HOW TO PLAY[/b]
+text = "[center][b]HOW TO PLAY[/b]
 
 Controls:
 - use mouse to select menu.
@@ -67,19 +84,33 @@ go to doors that you have triggered
 - If the Enemy spots you it will chase you!
 "
 
-[node name="TextEdit" type="TextEdit" parent="."]
-visible = false
-offset_left = 36.0
-offset_top = 29.0
-offset_right = 369.0
-offset_bottom = 291.0
-text = "Controls
-- use mouse to select menu
-- use arrow keys to move
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 783.0
+offset_top = 23.0
+offset_right = 1116.0
+offset_bottom = 505.0
+bbcode_enabled = true
+text = "[center][b]CREDITS[/b]
 
-Goal
-- Retrieve the flag at the end of the maze, 
-then return to the start to escape
-- Avoid the AI Enemy!"
+Game and Sprites:
+Ciaran Turnbull
+
+BehaviourTree Plugin \"Beehave\":
+bitbraindev
+https://github.com/bitbrain
+
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 411.0
+offset_top = 81.0
+offset_right = 744.0
+offset_bottom = 156.0
+bbcode_enabled = true
+text = "[center][b]BEHAVIOUR TREE STEALTH ENEMY[/b]
+
+Select Map:"
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/play1Button" to="." method="_on_play_1_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/play2Button" to="." method="_on_play_2_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/play3Button" to="." method="_on_play_3_button_down"]
