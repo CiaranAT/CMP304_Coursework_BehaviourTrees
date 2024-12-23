@@ -26,14 +26,15 @@ func _select_door(actor: Node):
 			
 			door_distance = actor.global_position.distance_to(door.global_position)
 			if door_distance < shortest_distance:
-				actor.target_location = door.global_position
 				shortest_distance = door_distance
 				selected_door = door
 				door_selected = true;
 	
 	if selected_door:
+		actor.target_location = selected_door.global_position
 		print("door selected in Roaming Action")
 		selected_door.door_unchecked = false;
+		target_reached = false
 	
 
 func tick(actor, _blackboard):
@@ -41,20 +42,21 @@ func tick(actor, _blackboard):
 	if !actor.is_connected("target_reached", _target_reached):
 		actor.connect("target_reached", _target_reached)
 
-	if target_reached:
-		target_reached = false
-		door_selected = false
-		actor.disconnect("target_reached", _target_reached)
-		return SUCCESS
-
 	if !door_selected:
 		_select_door(actor)
 		
 		if !door_selected:
 			actor.reset_doors()
 			return FAILURE
-	
+
+	if target_reached:
+		target_reached = false
+		door_selected = false
+		actor.disconnect("target_reached", _target_reached)
+		return SUCCESS
+
 	if !actor.current_state == State.ROAMING:
+		door_selected = false
 		return FAILURE
 	
 	if !target_reached:
