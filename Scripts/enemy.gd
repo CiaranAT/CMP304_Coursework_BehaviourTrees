@@ -10,17 +10,17 @@ enum State {
 	CHASING = 2
 }
 
-@export var target: Node2D = null
-@export var player: Node2D = null
-@export var target_location: Vector2:
-	get = get_target_location, set = set_target_location
+#@export var player: Node2D = null
 	
+@onready var player = get_node("/root/World/Player")
 @onready var navigation_agent = $EnemyNavigation
 @onready var enemy_state_sprite = $EnemyStateSprite
 @onready var line_of_sight = $LineOfSight
-@onready var game_manager = get_node("/root/World/GameManager")
+@onready var game_manager = %GameManager
 
 var door_entered_callable = Callable(self, "_door_entered")
+var target_location: Vector2:
+	get = get_target_location, set = set_target_location
 var current_state = State.ROAMING
 var current_movement_speed = 175
 var base_speed = 200
@@ -72,23 +72,17 @@ func set_state(new_state):
 		State.SEARCHING:
 			current_movement_speed = base_speed
 			enemy_state_sprite.set_frame(1)
-			_reset_doors()
+			reset_doors()
 		State.CHASING:
 			current_movement_speed = chase_speed
 			enemy_state_sprite.set_frame(2)
 
-func _reset_doors():
+func reset_doors():
 	for door in get_tree().get_nodes_in_group("door_group"):
 		door.door_unchecked = true
 
 func check_lineofsight():
-	line_of_sight.look_at(target.global_position)
-	
-	#if line_of_sight.is_colliding():
-		#var collider = line_of_sight.get_collider()
-		#print("Collider detected: ", collider)
-	#else:
-		#print("No collision detected.")
+	line_of_sight.look_at(player.global_position)
 	if player:
 		is_player_in_sight()
 		if player_spotted:
@@ -118,3 +112,8 @@ func _physics_process(delta: float):
 func _on_navigation_agent_2d_target_reached():
 	emit_signal("target_reached")
 	print("Signal received in Enemy: target reached")
+
+
+func _on_collision_detection_area_body_entered(body: Node2D):
+	if body.name == "Player":
+		game_manager.endScreen()

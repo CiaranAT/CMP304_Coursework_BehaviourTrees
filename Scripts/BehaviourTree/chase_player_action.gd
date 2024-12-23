@@ -9,7 +9,7 @@ enum State {
 func tick(actor, _blackboard):
 	
 	if actor.player_spotted:
-		actor.target_location = actor.target.global_position
+		actor.target_location = actor.player.global_position
 		return RUNNING
 	else:
 		actor.set_state(State.SEARCHING)

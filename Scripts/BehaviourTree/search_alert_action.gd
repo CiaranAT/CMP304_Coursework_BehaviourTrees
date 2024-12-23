@@ -17,8 +17,7 @@ var target_reached_callable = Callable(self, "_target_reached")
 func tick(actor, _blackboard):
 	if !actor.is_connected("target_reached", _target_reached):
 		actor.connect("target_reached", _target_reached)
-		actor.target_location = actor.target.global_position
-		
+		actor.target_location = actor.player.global_position
 	
 	if target_reached:
 		target_reached = false
@@ -27,7 +26,7 @@ func tick(actor, _blackboard):
 		return SUCCESS
 	
 	if actor.door_alert_during_search or actor.current_state == State.CHASING:
-		actor.target_location = actor.target.global_position
+		actor.target_location = actor.player.global_position
 		actor.door_alert_during_search = false
 		return FAILURE
 	

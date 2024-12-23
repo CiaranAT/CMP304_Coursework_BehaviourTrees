@@ -51,7 +51,7 @@ func tick(actor, _blackboard):
 		_select_door(actor)
 		
 		if !door_selected:
-			actor._reset_doors()
+			actor.reset_doors()
 			return FAILURE
 	
 	if !actor.current_state == State.ROAMING:

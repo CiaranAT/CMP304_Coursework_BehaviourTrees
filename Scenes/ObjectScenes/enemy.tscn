@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://02scjwgpwxsm"]
+[gd_scene load_steps=6 format=3 uid="uid://02scjwgpwxsm"]
 
 [ext_resource type="Texture2D" uid="uid://crbu4y0wcdbo0" path="res://Sprites/godotRed.png" id="1_3xjtf"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_r61he"]
@@ -7,9 +7,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3m076"]
 radius = 28.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_eqlne"]
-radius = 500.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -25,13 +22,13 @@ position = Vector2(0, -44)
 texture = ExtResource("3_j01yh")
 hframes = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="EnemyBody" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3m076")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionDetectionArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_eqlne")
+[node name="EnemyCollisionBody" type="CollisionShape2D" parent="CollisionDetectionArea"]
+shape = SubResource("CircleShape2D_3m076")
 
 [node name="EnemyNavigation" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
@@ -42,8 +39,10 @@ exclude_parent = false
 target_position = Vector2(500, 0)
 collision_mask = 9
 
-[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard") instance=ExtResource("3_3yog1")]
+[node name="EnemyAi" parent="." node_paths=PackedStringArray("blackboard", "actor") instance=ExtResource("3_3yog1")]
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@119095")
+blackboard = NodePath("@Node@154731")
+actor = NodePath("..")
 
+[connection signal="body_entered" from="CollisionDetectionArea" to="." method="_on_collision_detection_area_body_entered"]
 [connection signal="target_reached" from="EnemyNavigation" to="." method="_on_navigation_agent_2d_target_reached"]
