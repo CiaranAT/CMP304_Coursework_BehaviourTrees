@@ -6,6 +6,10 @@ public partial class GameManager : Node
 	public bool gamevictory = false;
 
     public float elapsed_time = 0;
+    public float time_roaming = 0;
+    public float time_searching = 0;
+    public float time_chasing = 0;
+
 
 
     [Signal]
@@ -46,11 +50,12 @@ public partial class GameManager : Node
 
     }
 
-    public void getTimes(float new_elapsed)
+    public void getTimes(float new_elapsed, float new_roaming, float new_searching, float new_chasing)
     {
         elapsed_time = new_elapsed;
-
-        GD.Print("Elapsed time updated: " + elapsed_time);
+        time_roaming = new_roaming;
+        time_searching = new_searching;
+        time_chasing = new_chasing;
     }
 
 	public void endScreen()

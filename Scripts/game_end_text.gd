@@ -27,9 +27,19 @@ func _on_game_end_screen_visibility_changed():
 	
 	if visible and game_manager:
 		total_time = String("%.3f" % game_manager.elapsed_time)
+		total_time_roaming = String("%.3f" % game_manager.time_roaming)
+		total_time_searching = String("%.3f" % game_manager.time_searching)
+		total_time_chasing = String("%.3f" % game_manager.time_chasing)
 		
 		if game_manager.gamevictory:
-			text = "[center][b][color=green]GAME VICTORY[/color][/b][/center]"
+			text = "[center][b][color=green]GAME VICTORY[/color][/b]
+			\nTotal Time: " + str(total_time) + "s
+			\nRoaming Time: " + str(total_time_roaming) + "s
+			\nSearching Time: " + str(total_time_searching) + "s
+			\nChasing Time: " + str(total_time_chasing) + "s[/center]"
 		else:
-			text = "[center][b][color=red]GAME OVER[/color][/b][/center][newline] 
-			Elapsed time:" + str(total_time) + "s"
+			text = "[center][b][color=red]GAME OVER[/color][/b]
+			\nTotal Time: " + str(total_time) + "s
+			\nRoaming Time: " + str(total_time_roaming) + "s
+			\nSearching Time: " + str(total_time_searching) + "s
+			\nChasing Time: " + str(total_time_chasing) + "s[/center]"

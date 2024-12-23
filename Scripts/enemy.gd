@@ -22,8 +22,8 @@ var target_location: Vector2:
 var current_state = State.ROAMING
 var current_movement_speed = 175
 var base_speed = 200
-var roam_speed = 175
-var chase_speed = 225
+var roam_speed = 190
+var chase_speed = 210
 var door_alert_during_search = false
 var player_spotted
 var elapsed_time = 0
@@ -117,6 +117,8 @@ func _physics_process(delta: float):
 	velocity = current_agent_position.direction_to(next_path_position) * current_movement_speed
 	
 	move_and_slide()
+	
+	game_manager.getTimes(elapsed_time, time_roaming, time_searching, time_chasing)
 
 func _on_navigation_agent_2d_target_reached():
 	emit_signal("target_reached")
@@ -125,5 +127,4 @@ func _on_navigation_agent_2d_target_reached():
 
 func _on_collision_detection_area_body_entered(body: Node2D):
 	if body.name == "Player":
-		game_manager.getTimes(elapsed_time)
 		game_manager.endScreen()
