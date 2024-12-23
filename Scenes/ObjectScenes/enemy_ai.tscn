@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mb1w011kygkl"]
+[gd_scene load_steps=12 format=3 uid="uid://mb1w011kygkl"]
 
 [ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_sx14a"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence.gd" id="2_a6etm"]
@@ -7,13 +7,14 @@
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_searching.gd" id="3_mnx7f"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_chasing_condition.gd" id="4_sehyo"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/roaming_action.gd" id="5_0ayoh"]
+[ext_resource type="Script" path="res://Scripts/BehaviourTree/continue_chase_action.gd" id="6_2jnmw"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/is_roaming_condition.gd" id="6_a6n3t"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/search_alert_action.gd" id="7_7lfsk"]
 [ext_resource type="Script" path="res://Scripts/BehaviourTree/wait_action.gd" id="10_duue4"]
 
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
-blackboard = NodePath("@Node@17360")
+blackboard = NodePath("@Node@319567")
 actor = NodePath("..")
 
 [node name="StateSelector" type="Node" parent="."]
@@ -27,6 +28,9 @@ script = ExtResource("4_sehyo")
 
 [node name="ChasePlayerAction" type="Node" parent="StateSelector/ChasePlayerSequence"]
 script = ExtResource("2_eb0hi")
+
+[node name="ContinueChaseAction" type="Node" parent="StateSelector/ChasePlayerSequence"]
+script = ExtResource("6_2jnmw")
 
 [node name="PatrolSelector" type="Node" parent="StateSelector"]
 script = ExtResource("2_ppwt1")

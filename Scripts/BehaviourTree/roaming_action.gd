@@ -9,9 +9,10 @@ enum State {
 var door_selected = false
 var target_reached = false
 
-func _target_reached():
-	self.target_reached = true
-	print("Signal received in RoamingSequenceAction: target_reached")
+func _target_reached_roam(current_state):
+	if current_state == State.ROAMING:
+		self.target_reached = true
+		print("Signal received in RoamingSequenceAction: target_reached")
 
 var callable = Callable(self, "_target_reached")
 
@@ -39,8 +40,8 @@ func _select_door(actor: Node):
 
 func tick(actor, _blackboard):
 	
-	if !actor.is_connected("target_reached", _target_reached):
-		actor.connect("target_reached", _target_reached)
+	if !actor.is_connected("target_reached", _target_reached_roam):
+		actor.connect("target_reached", _target_reached_roam)
 
 	if !door_selected:
 		_select_door(actor)
@@ -52,7 +53,7 @@ func tick(actor, _blackboard):
 	if target_reached:
 		target_reached = false
 		door_selected = false
-		actor.disconnect("target_reached", _target_reached)
+		actor.disconnect("target_reached", _target_reached_roam)
 		return SUCCESS
 
 	if !actor.current_state == State.ROAMING:

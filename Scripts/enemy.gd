@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Enemy
 
-signal target_reached
+signal target_reached(current_state)
 
 enum State {
 	ROAMING = 0,
@@ -121,7 +121,7 @@ func _physics_process(delta: float):
 	game_manager.getTimes(elapsed_time, time_roaming, time_searching, time_chasing)
 
 func _on_navigation_agent_2d_target_reached():
-	emit_signal("target_reached")
+	emit_signal("target_reached", current_state)
 	print("Signal received in Enemy: target reached")
 
 
