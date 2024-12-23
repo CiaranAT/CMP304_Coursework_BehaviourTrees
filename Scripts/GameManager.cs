@@ -5,6 +5,9 @@ public partial class GameManager : Node
 {
 	public bool gamevictory = false;
 
+    public float elapsed_time = 0;
+
+
     [Signal]
     public delegate void DoorEnteredEventHandler();
 
@@ -45,7 +48,10 @@ public partial class GameManager : Node
 
 	public void endScreen()
 	{
-		GetTree().Paused = true;
+// elapsed_time = GetNode<GameEndScreen>("%Enemy").elapsed_time
+
+
+        GetTree().Paused = true;
 
         GetNode<GameEndScreen>("%GameEndScreen").Show();
     }

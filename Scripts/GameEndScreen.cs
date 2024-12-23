@@ -16,6 +16,11 @@ public partial class GameEndScreen : CanvasLayer
 
 	}
 
+    //public void InitMenu(double delta)
+    //{
+    //    this.Show();
+    //}
+
     public void _on_main_menu_button_down()
 	{
         this.Hide();

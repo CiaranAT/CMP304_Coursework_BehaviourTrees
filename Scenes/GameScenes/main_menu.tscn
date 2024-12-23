@@ -14,6 +14,10 @@ color = Color(0.266575, 0.266575, 0.266575, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 383.0
+offset_top = 97.0
+offset_right = -380.0
+offset_bottom = -173.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -36,7 +40,35 @@ layout_mode = 2
 layout_mode = 2
 text = "exit"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 447.0
+offset_bottom = 524.0
+bbcode_enabled = true
+text = "[b]HOW TO PLAY[/b]
+
+Controls:
+- use mouse to select menu.
+- use arrow keys to move.
+
+Goal:
+- Retrieve the flag at the end of the maze, 
+then return to the start to escape
+- Avoid the AI Enemy! If it catches you
+it's Game Over!
+-Walking into doors will alert the Enemy!
+
+Enemy AI:
+- The enemy uses behaviour trees 
+to try and find the player.
+- It will roam around the map and
+go to doors that you have triggered
+- If the Enemy spots you it will chase you!
+"
+
 [node name="TextEdit" type="TextEdit" parent="."]
+visible = false
 offset_left = 36.0
 offset_top = 29.0
 offset_right = 369.0

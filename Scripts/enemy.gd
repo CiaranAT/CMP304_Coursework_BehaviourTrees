@@ -9,8 +9,6 @@ enum State {
 	SEARCHING = 1,
 	CHASING = 2
 }
-
-#@export var player: Node2D = null
 	
 @onready var player = get_node("/root/World/Player")
 @onready var navigation_agent = $EnemyNavigation
@@ -28,6 +26,10 @@ var roam_speed = 175
 var chase_speed = 225
 var door_alert_during_search = false
 var player_spotted
+@export var elapsed_time = 0
+@export var time_roaming = 0
+@export var time_searching = 0
+@export var time_chasing = 0
 
 func _ready():
 	
@@ -98,6 +100,15 @@ func is_player_in_sight():
 	player_spotted = false
 
 func _physics_process(delta: float):
+	elapsed_time += 1 * delta
+	match current_state:
+		State.ROAMING:
+			time_roaming += 1 * delta
+		State.SEARCHING:
+			time_searching += 1 * delta
+		State.CHASING:
+			time_chasing += 1 * delta
+	
 	if navigation_agent.is_navigation_finished():
 		return
 
