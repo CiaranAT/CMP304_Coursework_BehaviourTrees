@@ -15,6 +15,7 @@ public partial class ExitCollision : Area2D
 
     private void _on_exit_entered(PhysicsBody2D body)
     {
+		//tell the game manager that the exit has been collided with the player
 		GetNode<GameManager>("%GameManager").exitCollision();
     }
 }

@@ -10,7 +10,6 @@ public partial class Flag : Area2D
 	{
         GD.Print("flag exists");
 
-        
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +19,8 @@ public partial class Flag : Area2D
 
     private void _on_body_entered(PhysicsBody2D body)
     {
+
+        //give flag to player and remove it from the world
         GD.Print("flag collision");
 
         GetNode<Player>("%Player").getFlag();

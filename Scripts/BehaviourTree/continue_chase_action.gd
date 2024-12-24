@@ -15,19 +15,20 @@ func _target_reached_chase(current_state):
 
 var target_reached_callable = Callable(self, "_target_reached")
 
-func tick(actor, _blackboard):
+func tick(actor, _blackboard): #travel to the last sighted location of the player
+	#connect navigation path end reached signal to this node
 	if !actor.is_connected("target_reached", _target_reached_chase):
 		actor.connect("target_reached", _target_reached_chase)
 		actor.target_location = actor.player.global_position
 	
-	if target_reached:
+	if target_reached: #when the target is reached, search for the player briefly
 		target_reached = false
 		actor.set_state(State.SEARCHING)
 		actor.disconnect("target_reached", _target_reached_chase)
 		actor.target_location = actor.player.global_position
 		return SUCCESS
 	
-	if actor.player_spotted:
+	if actor.player_spotted: #reset tree and go back to chasing player
 		actor.disconnect("target_reached", _target_reached_chase)
 		return FAILURE
 	

@@ -11,7 +11,6 @@ public partial class GameManager : Node
     public float time_chasing = 0;
 
 
-
     [Signal]
     public delegate void DoorEnteredEventHandler();
 
@@ -32,13 +31,14 @@ public partial class GameManager : Node
 
     public void doorOpenAlert()
     {
-
+        //alerts the enemy of a door opening
         GD.Print("door collision alert");
         EmitSignal(SignalName.DoorEntered);
     }
 
     public void exitCollision()
 	{
+        // end the game if player exits while holding flag
         if (GetNode<Player>("%Player").hasFlag)
 		{
             gamevictory = true;
@@ -52,6 +52,7 @@ public partial class GameManager : Node
 
     public void getTimes(float new_elapsed, float new_roaming, float new_searching, float new_chasing)
     {
+        //store the enemy's time data
         elapsed_time = new_elapsed;
         time_roaming = new_roaming;
         time_searching = new_searching;
@@ -60,7 +61,7 @@ public partial class GameManager : Node
 
 	public void endScreen()
 	{
-
+        //pause the game and display the on screen menu
         GetTree().Paused = true;
 
         GetNode<GameEndScreen>("%GameEndScreen").Show();

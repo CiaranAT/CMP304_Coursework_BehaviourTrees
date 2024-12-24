@@ -3,6 +3,7 @@ using System;
 
 public partial class MainMenu : CanvasLayer
 {
+    //get scenes ready to change to
     PackedScene world1 = (PackedScene)GD.Load("res://Scenes/GameScenes/world.tscn");
     PackedScene world2 = (PackedScene)GD.Load("res://Scenes/GameScenes/world2.tscn");
     PackedScene world3 = (PackedScene)GD.Load("res://Scenes/GameScenes/world3.tscn");
@@ -23,14 +24,11 @@ public partial class MainMenu : CanvasLayer
 
     public void _on_play_2_button_down()
     {
-        GD.Print("button 2");
-
         GetTree().ChangeSceneToPacked(world2);
     }
 
     public void _on_play_3_button_down()
     {
-        GD.Print("button 3");
         GetTree().ChangeSceneToPacked(world3);
     }
 }

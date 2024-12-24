@@ -8,8 +8,8 @@ enum State {
 
 func tick(actor, _blackboard):
 	
-	if actor.player_spotted:
+	if actor.player_spotted: #move towards the player every frame while in sight
 		actor.target_location = actor.player.global_position
 		return RUNNING
-	else:
+	else: #return when enemy loses sight of player
 		return SUCCESS

@@ -17,6 +17,7 @@ public partial class DoorCollision : Area2D
 
     private void _on_door_entered(PhysicsBody2D body)
     {
+		//tell the game manager that this door has been collided with the player
 		GetNode<GameManager>("%GameManager").doorOpenAlert();
     }
 }
