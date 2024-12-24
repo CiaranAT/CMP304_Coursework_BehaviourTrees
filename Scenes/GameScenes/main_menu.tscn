@@ -6,20 +6,13 @@
 script = ExtResource("1_xrfsg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_right = 1159.0
+offset_bottom = 656.0
 color = Color(0.266575, 0.266575, 0.266575, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 383.0
-offset_top = 97.0
-offset_right = -380.0
-offset_bottom = -173.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1154.0
+offset_bottom = 648.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -88,7 +81,7 @@ go to doors that you have triggered
 offset_left = 783.0
 offset_top = 23.0
 offset_right = 1116.0
-offset_bottom = 505.0
+offset_bottom = 230.0
 bbcode_enabled = true
 text = "[center][b]CREDITS[/b]
 
