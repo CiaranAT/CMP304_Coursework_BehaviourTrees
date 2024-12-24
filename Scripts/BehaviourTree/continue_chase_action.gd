@@ -9,7 +9,7 @@ enum State {
 var target_reached = false
 
 func _target_reached_chase(current_state):
-	if current_state == State.CHASING:
+	if current_state == State.CHASING or current_state == State.SEARCHING:
 		self.target_reached = true
 		print("Signal received in SearchPlayerAction: target_reached")
 
@@ -28,7 +28,7 @@ func tick(actor, _blackboard):
 		return SUCCESS
 	
 	if actor.player_spotted:
-		actor.door_alert_during_search = false
+		actor.disconnect("target_reached", _target_reached_chase)
 		return FAILURE
 	
 	if !target_reached:

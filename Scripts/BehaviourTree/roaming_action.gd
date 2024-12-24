@@ -48,6 +48,7 @@ func tick(actor, _blackboard):
 		
 		if !door_selected:
 			actor.reset_doors()
+			actor.disconnect("target_reached", _target_reached_roam)
 			return FAILURE
 
 	if target_reached:
@@ -58,7 +59,9 @@ func tick(actor, _blackboard):
 
 	if !actor.current_state == State.ROAMING:
 		door_selected = false
+		actor.disconnect("target_reached", _target_reached_roam)
 		return FAILURE
 	
 	if !target_reached:
+		actor.disconnect("target_reached", _target_reached_roam)
 		return RUNNING

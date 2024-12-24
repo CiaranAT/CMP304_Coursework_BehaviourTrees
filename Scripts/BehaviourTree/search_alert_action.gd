@@ -29,6 +29,7 @@ func tick(actor, _blackboard):
 	if actor.door_alert_during_search or actor.current_state == State.CHASING:
 		actor.target_location = actor.player.global_position
 		actor.door_alert_during_search = false
+		actor.disconnect("target_reached", _target_reached_search)
 		return FAILURE
 	
 	if !target_reached:
