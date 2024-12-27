@@ -46,10 +46,6 @@ text = "Play Map 3 - Open Plan"
 custom_minimum_size = Vector2(100, 10)
 layout_mode = 2
 
-[node name="exitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "exit"
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 36.0
 offset_top = 29.0
