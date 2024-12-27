@@ -1,3 +1,5 @@
+#The main script for processing the enemies movement and any signals passed to the enemy
+#Updated every frame with data from the currently running bejaviour tree node
 extends CharacterBody2D
 
 class_name Enemy

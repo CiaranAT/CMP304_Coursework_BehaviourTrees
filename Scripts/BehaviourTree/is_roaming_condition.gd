@@ -1,3 +1,4 @@
+#controls if the roaming sequence should start
 extends ConditionLeaf
 
 enum State {

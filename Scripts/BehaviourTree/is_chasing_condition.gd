@@ -1,3 +1,4 @@
+#controls if the chasing sequence should start
 extends ConditionLeaf
 
 enum State {

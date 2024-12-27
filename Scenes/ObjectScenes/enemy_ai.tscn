@@ -15,7 +15,7 @@
 [node name="EnemyAi" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_sx14a")
 blackboard = NodePath("@Node@17369")
-actor = NodePath("")
+actor = NodePath("..")
 
 [node name="StateSelector" type="Node" parent="."]
 script = ExtResource("2_ppwt1")

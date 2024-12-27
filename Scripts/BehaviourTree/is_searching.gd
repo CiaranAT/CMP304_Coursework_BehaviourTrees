@@ -1,3 +1,4 @@
+#controls if the searching sequence should start
 extends ConditionLeaf
 
 enum State {
