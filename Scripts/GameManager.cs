@@ -32,7 +32,6 @@ public partial class GameManager : Node
     public void doorOpenAlert()
     {
         //alerts the enemy of a door opening
-        GD.Print("door collision alert");
         EmitSignal(SignalName.DoorEntered);
     }
 

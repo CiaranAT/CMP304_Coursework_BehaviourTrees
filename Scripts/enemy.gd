@@ -35,22 +35,11 @@ var time_searching = 0
 var time_chasing = 0
 
 func _ready():
-	
-	if game_manager:
-		print("GameManager found")
-	else:
-		print("GameManager not found")
-	
 	call_deferred("connect_signal")
-	
 
 func connect_signal():
-	print("connect signal call in enemy")
 	if game_manager.has_signal("DoorEntered"):
 		game_manager.connect("DoorEntered", _door_entered)
-		print("Signal 'door_entered' found on GameManager.")
-	else:
-		print("Signal 'door_entered' not found on GameManager.")
 
 func get_target_location():
 	return target_location
@@ -127,11 +116,9 @@ func _physics_process(delta: float):
 #called when enemy arrives at the end of the navigation path
 func _on_navigation_agent_2d_target_reached():
 	emit_signal("target_reached", current_state)
-	print("Signal received in Enemy: target reached")
 
 #used to re enter the searching phase when a new door is entered
 func _door_entered():
-	print("Signal received in Enemy: door_entered")
 	if current_state == State.SEARCHING:
 		door_alert_during_search = true
 	elif !current_state == State.SEARCHING:

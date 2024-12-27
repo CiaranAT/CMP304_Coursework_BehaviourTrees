@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\doorcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\doorcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\gameendscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\gameendscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\exitcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +27,8 @@
       "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\flag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\gameendscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\gameendscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|c:\\users\\ciara\\documents\\godot\\4.0\\projects\\304_github\\cmp304_coursework_behaviourtrees\\scripts\\doorcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18AEF407-4C10-4784-B1A1-C025B07FDA24}|304_AI_Enemy.csproj|solutionrelative:scripts\\doorcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_ai_enemy\\Scripts\\BehaviourTree\\ConditionLeaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -44,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
@@ -54,20 +54,20 @@
               "RelativeDocumentMoniker": "Scripts\\GameEndScreen.cs",
               "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameEndScreen.cs",
               "RelativeToolTip": "Scripts\\GameEndScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T17:37:33.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T16:03:00.612Z",
               "EditorCaption": ""
@@ -85,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ExitCollision.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\ExitCollision.cs",
               "RelativeDocumentMoniker": "Scripts\\ExitCollision.cs",
@@ -98,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "DoorCollision.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\DoorCollision.cs",
               "RelativeDocumentMoniker": "Scripts\\DoorCollision.cs",
@@ -111,13 +111,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\MainMenu.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu.cs",
               "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\MainMenu.cs",
               "RelativeToolTip": "Scripts\\MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T13:01:35.016Z",
               "EditorCaption": ""
@@ -136,26 +136,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player.cs",
               "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\Player.cs",
               "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T18:31:37.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Flag.cs",
               "DocumentMoniker": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\Flag.cs",
               "RelativeDocumentMoniker": "Scripts\\Flag.cs",
               "ToolTip": "C:\\Users\\Ciara\\Documents\\godot\\4.0\\projects\\304_GitHub\\CMP304_Coursework_BehaviourTrees\\Scripts\\Flag.cs",
               "RelativeToolTip": "Scripts\\Flag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T18:20:36.428Z",
               "EditorCaption": ""

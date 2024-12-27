@@ -11,7 +11,6 @@ var target_reached = false
 func _target_reached_search(current_state):
 	if current_state == State.SEARCHING:
 		self.target_reached = true
-		print("Signal received in SearchDoorAlertAction: target_reached")
 
 var target_reached_callable = Callable(self, "_target_reached")
 

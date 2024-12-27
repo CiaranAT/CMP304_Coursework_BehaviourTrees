@@ -7,16 +7,6 @@ var total_time_roaming = 0
 var total_time_searching = 0
 var total_time_chasing = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	if game_manager:
-		print("game manager found in GameEndScreen")
-	else:
-		print("NO game manager found in GameEndScreen")
-	
-	
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

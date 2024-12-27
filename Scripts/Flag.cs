@@ -8,7 +8,6 @@ public partial class Flag : Area2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        GD.Print("flag exists");
 
     }
 
@@ -21,7 +20,6 @@ public partial class Flag : Area2D
     {
 
         //give flag to player and remove it from the world
-        GD.Print("flag collision");
 
         GetNode<Player>("%Player").getFlag();
 

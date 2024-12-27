@@ -9,8 +9,6 @@ public partial class Player : CharacterBody2D
 
     public override void _Ready()
     {
-        GD.Print("player exists");
-
 		GetNode<Sprite2D>("FlagHoldSprite").Hide();
     }
 
@@ -38,7 +36,6 @@ public partial class Player : CharacterBody2D
 	public void getFlag() //attach flag to player
     {
 		hasFlag = true;
-        GD.Print("player gets flag");
         GetNode<Sprite2D>("FlagHoldSprite").Show();
     }
 }

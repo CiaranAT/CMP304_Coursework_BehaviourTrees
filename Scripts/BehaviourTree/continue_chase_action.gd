@@ -11,7 +11,6 @@ var target_reached = false
 func _target_reached_chase(current_state):
 	if current_state == State.CHASING or current_state == State.SEARCHING:
 		self.target_reached = true
-		print("Signal received in SearchPlayerAction: target_reached")
 
 var target_reached_callable = Callable(self, "_target_reached")
 

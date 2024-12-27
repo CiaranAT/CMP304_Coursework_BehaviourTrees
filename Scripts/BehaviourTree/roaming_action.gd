@@ -12,7 +12,6 @@ var target_reached = false
 func _target_reached_roam(current_state):
 	if current_state == State.ROAMING:
 		self.target_reached = true
-		print("Signal received in RoamingSequenceAction: target_reached")
 
 var callable = Callable(self, "_target_reached")
 
@@ -33,7 +32,6 @@ func _select_door(actor: Node): #selects the nearest "unchecked" door and select
 	
 	if selected_door:
 		actor.target_location = selected_door.global_position
-		print("door selected in Roaming Action")
 		selected_door.door_unchecked = false;
 		target_reached = false
 	
